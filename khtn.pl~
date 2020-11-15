@@ -804,20 +804,6 @@ la_nam_va_la_truong_khoa(_giangVien):-
     truong_khoa(_giangVien, _khoa),
     khoa(_khoa).
 
-la_nu_va_la_truong_khoa(_giangVien):-
-    giang_vien(_giangVien),
-    nam(_giangVien),
-    truong_khoa(_giangVien, _khoa),
-    khoa(_khoa).
-
-la_nam_va_la_truong_bo_mon(_giangVien):-
-    giang_vien(_giangVien),
-    nam(_giangVien),
-    pho_bo_mon(_giangVien, _boMon),
-    bo_mon(_boMon),
-    truc_thuoc(_boMon, _khoa),
-    khoa(_khoa).
-
 writeln(Line) :-
 	\+ is_list(Line),
 	write(Line),
