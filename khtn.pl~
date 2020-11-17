@@ -748,6 +748,12 @@ giao_su_lam_truong_khoa(_giangVien):-
     truong_khoa(_giangVien, _khoa),
     khoa(_khoa).
 
+pho_giao_lam_truong_khoa(_giangVien):-
+    giang_vien(_giangVien),
+    hoc_ham(_giangVien, 'PGS'),
+    truong_khoa(_giangVien, _khoa),
+    khoa(_khoa).
+
 giao_su(_giangVien):-
     giang_vien(_giangVien),
     hoc_ham(_giangVien, 'GS').
@@ -784,25 +790,6 @@ cung_la_thac_si(_giangVien01, _giangVien02):-
     thac_si(_giangVien01),
     thac_si(_giangVien02).
 
-vua_la_truong_khoa_vua_la_truong_bo_mon(_giangVien):-
-    giang_vien(_giangVien),
-    truong_bo_mon(_giangVien, _boMon),
-    bo_mon(_boMon),
-    bo_mon_thuoc_khoa(_boMon, _khoa),
-    truong_khoa(_giangVien, _khoa).
-
-vua_la_truong_khoa_vua_la_pho_bo_mon(_giangVien):-
-    giang_vien(_giangVien),
-    pho_bo_mon(_giangVien, _boMon),
-    bo_mon(_boMon),
-    bo_mon_thuoc_khoa(_boMon, _khoa),
-    truong_khoa(_giangVien, _khoa).
-
-la_nam_va_la_truong_khoa(_giangVien):-
-    giang_vien(_giangVien),
-    nam(_giangVien),
-    truong_khoa(_giangVien, _khoa),
-    khoa(_khoa).
 
 writeln(Line) :-
 	\+ is_list(Line),
@@ -825,8 +812,8 @@ writeln(List) :-
 	nl.
 
 question_01 :-
-writeln('Nguyen Dinh Thuc la giang vien dung hay sai ?'),
-giang_vien('Nguyen Dinh Thuc') -> writeln('Dung'); writeln('Sai').
+writeln('Le Ngoc Thanh la giang vien dung hay sai ?'),
+giang_vien('Le Ngoc Thanh') -> writeln('Dung'); writeln('Sai').
 
 question_02 :-
 writeln('Bo mon nao cung khoa voi bo mon Khoa hoc may tinh ?'),
@@ -848,7 +835,9 @@ writeln(DanhSachNganh).
 
 question_06 :-
 writeln('Khoa CNTT co nhung chuyen nganh nao?'),
-findall(_chuyen_nganh, (chuyen_nganh(_chuyen_nganh), truc_thuoc(_chuyen_nganh,_nganh), truc_thuoc(_nganh, 'CNTT')), DanhSachChuyenNganh),
+findall(_chuyen_nganh, (chuyen_nganh(_chuyen_nganh),
+                        truc_thuoc(_chuyen_nganh,_nganh),
+                        truc_thuoc(_nganh, 'CNTT')), DanhSachChuyenNganh),
 writeln(DanhSachChuyenNganh).
 
 question_07 :-
@@ -867,22 +856,30 @@ writeln(DanhSachPhoKhoa).
 
 question_10 :-
     writeln('Danh sach Giao su cua khoa CNTT'),
-    findall(_giaosu, (giao_su(_giaosu), truc_thuoc(_giaosu, _nganh), truc_thuoc(_nganh, 'CNTT')), DanhSachGiaoSu),
+    findall(_giaosu, (giao_su(_giaosu),
+                      truc_thuoc(_giaosu, _nganh),
+                      truc_thuoc(_nganh, 'CNTT')), DanhSachGiaoSu),
     writeln(DanhSachGiaoSu).
 
 question_11 :-
     writeln('Danh sach Pho Giao su cua khoa CNTT'),
-    findall(_phogiaosu, (pho_giao_su(_phogiaosu), truc_thuoc(_phogiaosu, _nganh), truc_thuoc(_nganh, 'CNTT')), DanhSachPhoGiaoSu),
+    findall(_phogiaosu, (pho_giao_su(_phogiaosu),
+                         truc_thuoc(_phogiaosu, _nganh),
+                         truc_thuoc(_nganh, 'CNTT')), DanhSachPhoGiaoSu),
     writeln(DanhSachPhoGiaoSu).
 
 question_12 :-
     writeln('Danh sach Tien si cua khoa CNTT'),
-    findall(_giangvien, (tien_si(_giangvien), truc_thuoc(_giangvien, _nganh), truc_thuoc(_nganh, 'CNTT')), DanhSachTienSi),
+    findall(_giangvien, (tien_si(_giangvien),
+                         truc_thuoc(_giangvien, _nganh),
+                         truc_thuoc(_nganh, 'CNTT')), DanhSachTienSi),
     writeln(DanhSachTienSi).
 
 question_13 :-
     writeln('Danh sach Thac si cua khoa CNTT'),
-    findall(_giangvien, (thac_si(_giangvien), truc_thuoc(_giangvien, _nganh), truc_thuoc(_nganh, 'CNTT')), DanhSachThacSi),
+    findall(_giangvien, (thac_si(_giangvien),
+                         truc_thuoc(_giangvien, _nganh),
+                         truc_thuoc(_nganh, 'CNTT')), DanhSachThacSi),
     writeln(DanhSachThacSi).
 
 question_14 :-
@@ -905,7 +902,7 @@ question_17 :-
 
 question_18 :-
     writeln('Ai la pho truong bo mon Khoa hoc may tinh?'),
-    truong_bo_mon(_phoTruongBoMonKHMT, 'Khoa hoc may tinh'),
+    pho_bo_mon(_phoTruongBoMonKHMT, 'Khoa hoc may tinh'),
     writeln(_phoTruongBoMonKHMT).
 
 question_19 :-
@@ -915,6 +912,16 @@ question_19 :-
 question_20 :-
     writeln('Chuyen nganh Cong nghe tri thuc va Thi giac may tinh va Dieu khien hoc thong minh co cung nganh khong?'),
     chuyen_nganh_cung_nganh('Cong nghe tri thuc', 'Thi giac may tinh va dieu khien hoc thong minh') -> writeln('Dung'); writeln('Sai').
+
+question_21 :-
+    writeln('Phong bo mon Khoa hoc may tinh la I.81, dung hay sai?'),
+    phong('Khoa hoc may tinh', 'I.81') ->  writeln('Dung'); writeln('Sai').
+
+question_22 :-
+    writeln('Nhung ai la truong khoa cua cac khoa truong KHTN?'),
+    findall(_truongkhoa, (truong_khoa(_truongkhoa, _khoa), khoa(_khoa)), DanhSachTruongKhoa),
+    writeln(DanhSachTruongKhoa).
+
 
 
 
