@@ -1,0 +1,114 @@
+?- question_01.
+Le Ngoc Thanh la giang vien dung hay sai ?
+Dung
+true .
+
+?- question_02.
+Bo mon nao cung khoa voi bo mon Khoa hoc may tinh ?
+[Cong nghe phan mem,Cong nghe tri thuc,He thong thong tin,Khoa hoc may tinh,Mang may tinh va Vien thong,Thi giac may tinh va dieu khien hoc thong minh]
+true .
+
+?- question_03.
+Hoc vi cua thay Le Ngoc Thanh la tien si dung hay sai ?
+Dung
+true .
+
+?- question_04.
+Thay Le Hoai Bac la giao su dung hay sai ?
+Dung
+true .
+
+?- question_05.
+Khoa CNTT co nhung nganh nao?
+[Cong nghe thong tin,He thong thong tin,Khoa hoc may tinh,Ky thuat phan mem]
+true .
+
+?- question_06.
+Khoa CNTT co nhung chuyen nganh nao?
+[An toan thong tin,Cong nghe thong tin,He thong thong tin,Khoa hoc du lieu,Khoa hoc may tinh,Ky thuat phan mem,Mang may tinh]
+true .
+
+?- question_07.
+Khoa CNTT thanh lap nam nao?
+[1995]
+true .
+
+?- question_08.
+Thay Dinh Ba Tien la truong khoa CNTT dung hay sai ?
+Dung
+true .
+
+?- question_09.
+Nhung ai dang giu chuc pho khoa CNTT ?
+[Lam Quang Vu,Nguyen Van Vu,Van Chi Nam]
+true .
+
+?- question_10.
+Danh sach Giao su cua khoa CNTT
+[Le Hoai Bac]
+true .
+
+?- question_11.
+Danh sach Pho Giao su cua khoa CNTT
+[Dinh Dien,Ly Quoc Ngoc,Nguyen Dinh Thuc]
+true .
+
+?- question_12.
+Danh sach Tien si cua khoa CNTT
+[Dinh Ba Tien,Dinh Dien,Huynh Thi Bao Tran,Lam Quang Vu,Le Hoai Bac,Le Ngoc Thanh,Ly Quoc Ngoc,Nguyen Dinh Thuc,Nguyen Thi Minh Tuyen,Nguyen Tran Minh Thu,Pham Nguyen Cuong,Tran Thai Son,Tran Trung Dung]
+true .
+
+?- question_13.
+Danh sach Thac si cua khoa CNTT
+[Van Chi Nam]
+true .
+
+?- question_14.
+Nganh Khoa hoc may tinh va Ky thuat phan mem co cung khoa ?
+Dung
+true .
+
+?- question_15.
+Thay Ly Quoc Ngoc va thay Le Hoai Bac co cung la giao su?
+Sai
+true .
+
+?- question_16.
+Truong DH KHTN co nhung khoa nao?
+[CNTT,Dien tu - Vien thong,Hoa hoc,Khoa hoc va Cong nghe vat lieu,Moi truong,Sinh hoc - Cong nghe sinh hoc,Toan - Tin hoc,Vat ly - Vat ly ky thuat]
+true .
+
+?- question_17.
+Ai la truong bo mon Khoa hoc may tinh?
+Le Hoai Bac
+true .
+
+?- question_17.
+Ai la truong bo mon Khoa hoc may tinh?
+Le Hoai Bac
+true .
+
+?- question_18.
+Ai la pho truong bo mon Khoa hoc may tinh?
+Le Ngoc Thanh
+true .
+
+?- question_19.
+Le Nhut Nam co phai la giao su?
+Sai
+true .
+
+?- question_20.
+Chuyen nganh Cong nghe tri thuc va Vat ly Ly thuyet?
+Sai
+true .
+
+?- question_21.
+Phong bo mon Khoa hoc may tinh la I.81, dung hay sai?
+Dung
+true .
+
+?- question_22.
+Nhung ai la truong khoa cua cac khoa truong KHTN?
+[Dinh Ba Tien,Huynh Huu Thuan,Huynh Quang Vu,Le Vu Tuan Hung,Nguyen Thi Thanh Mai,Nguyen Tri Nhan,Pham Trung Hieu,To Thi Hien,Tran Thi Thanh Van]
+true .
